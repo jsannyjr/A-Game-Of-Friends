@@ -3,17 +3,17 @@ package com.agameoffriends.agameoffriends;
 import java.util.ArrayList;
 
 public class QuestionLibrary {
-    private String nQuestions[] = {
+    public String nQuestions[] = {
             "What is the first thing Player 1 touches in the morning?"
     };
 
-    private String nChoices[][] = {
+    public String nChoices[][] = {
             {"A) Their phone;", "B) The lights;", "C) The newspaper", "D) Themselves??"}
     };
 
     private ArrayList <String> nAnswers = new ArrayList<>();
 
-    public String getQuestion(int a){
+    public String getQuestion (int a){
         String question = nQuestions[a];
         return question;
     }

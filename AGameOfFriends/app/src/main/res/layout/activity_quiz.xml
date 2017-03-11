@@ -15,17 +15,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Score"
+            android:text="A Game of Friends"
             android:layout_alignParentLeft="true"
-            android:id="@+id/score_text"/>
+            android:id="@+id/title_top"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:layout_alignParentRight="true"
-            android:id="@+id/score"
-            android:textSize = "20sp"/>
     </RelativeLayout>
 
     <TextView
