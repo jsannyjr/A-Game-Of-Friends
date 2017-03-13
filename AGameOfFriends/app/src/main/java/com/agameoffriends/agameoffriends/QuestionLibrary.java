@@ -4,11 +4,14 @@ import java.util.ArrayList;
 
 public class QuestionLibrary {
     public String nQuestions[] = {
-            "What is the first thing Player 1 touches in the morning?"
-    };
+            "What is the first thing Player 1 touches in the morning?",
+            "What does Player 1 say to get ready for whoopee?"
+};
 
     public String nChoices[][] = {
-            {"A) Their phone;", "B) The lights;", "C) The newspaper", "D) Themselves??"}
+            {"A) Their phone;", "B) The lights;", "C) The newspaper", "D) Themselves??"},
+            {"A) My anaconda wants some of that.", "B) Have you ever seen the Eiffel Tower this close?",
+                    "C) Call me Big Daddy.", "D) You’re kidding right?"}
     };
 
     private ArrayList <String> nAnswers = new ArrayList<>();

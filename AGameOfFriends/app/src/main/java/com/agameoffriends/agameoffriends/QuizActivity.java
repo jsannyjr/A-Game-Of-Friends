@@ -40,6 +40,8 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice2 = (Button)findViewById(R.id.choice3);
         nButtonChoice3 = (Button)findViewById(R.id.choice4);
 
+        updateQuestion();
+
         nButtonChoice0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
