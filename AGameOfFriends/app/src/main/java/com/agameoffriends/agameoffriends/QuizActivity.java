@@ -10,6 +10,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button nButtonChoice2;
     private Button nButtonChoice3;
 
-    private String mAnswer;
+    private String mAnswer = "";
     private int mScore = 0;
     private int mQuestionNumber = 0;
     private int questionLibrarySize = 10;
@@ -45,7 +46,14 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(nButtonChoice0.getText() == mAnswer){
+                if(mQuestionNumber < 5){
+
+                    String newAnswer = nButtonChoice0.getText().toString();
+                    System.out.println(newAnswer);
+                    questionLibrary.nAnswers.add(newAnswer);
+                    updateQuestion();
+                }
+                else if(mQuestionNumber >= 5 && nButtonChoice0.getText() == mAnswer){
                     mScore = mScore + 1;
                     updateQuestion();
                 }
@@ -55,7 +63,14 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(nButtonChoice0.getText() == mAnswer){
+                if(mQuestionNumber < 5){
+
+                    String newAnswer = nButtonChoice1.getText().toString();
+                    System.out.println(newAnswer);
+                    questionLibrary.nAnswers.add(newAnswer);
+                    updateQuestion();
+                }
+                else if(mQuestionNumber >= 5 && nButtonChoice1.getText() == mAnswer){
                     mScore = mScore + 1;
                     updateQuestion();
                 }
@@ -65,7 +80,14 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(nButtonChoice0.getText() == mAnswer){
+                if(mQuestionNumber < 5){
+
+                    String newAnswer = nButtonChoice2.getText().toString();
+                    System.out.println(newAnswer);
+                    questionLibrary.nAnswers.add(newAnswer);
+                    updateQuestion();
+                }
+                else if(mQuestionNumber >= 5 && nButtonChoice2.getText() == mAnswer){
                     mScore = mScore + 1;
                     updateQuestion();
                 }
@@ -75,7 +97,14 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(nButtonChoice0.getText() == mAnswer){
+                if(mQuestionNumber < 5){
+
+                    String newAnswer = nButtonChoice3.getText().toString();
+                    System.out.println(newAnswer);
+                    questionLibrary.nAnswers.add(newAnswer);
+                    updateQuestion();
+                }
+                else if(mQuestionNumber >= 5 && nButtonChoice3.getText() == mAnswer){
                     mScore = mScore + 1;
                     updateQuestion();
                 }
@@ -83,15 +112,19 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
-    public void updateQuestion(){
+    public void updateQuestion() {
         mQuestionView.setText(questionLibrary.getQuestion(mQuestionNumber));
         nButtonChoice0.setText(questionLibrary.getChoice0(mQuestionNumber));
         nButtonChoice1.setText(questionLibrary.getChoice1(mQuestionNumber));
         nButtonChoice2.setText(questionLibrary.getChoice2(mQuestionNumber));
         nButtonChoice3.setText(questionLibrary.getChoice3(mQuestionNumber));
 
-        mAnswer =questionLibrary.getCorrectAnswer(mQuestionNumber);
+        if(mQuestionNumber > 4) {
+            mAnswer = questionLibrary.getCorrectAnswer(mQuestionNumber - 5);
+        }
         usedQuestions.add(mQuestionNumber);
+        questionLibrary.nQuestions.remove(mQuestionNumber);
+        //questionLibrary.nChoices.
         mQuestionNumber++;
 
 
