@@ -11,6 +11,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -27,7 +28,7 @@ public class QuizActivity extends AppCompatActivity {
     private int mScore = 0;
     private int mQuestionNumber = 0;
     private int questionLibrarySize = 10;
-    private ArrayList<Integer> usedQuestions= new ArrayList<>();
+    private ArrayList<String> usedQuestions= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +47,14 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mQuestionNumber < 5){
+                if(mQuestionNumber < 4){
 
                     String newAnswer = nButtonChoice0.getText().toString();
                     System.out.println(newAnswer);
                     questionLibrary.nAnswers.add(newAnswer);
                     updateQuestion();
                 }
-                else if(mQuestionNumber >= 5 && nButtonChoice0.getText() == mAnswer){
+                else if(mQuestionNumber >= 4 && nButtonChoice0.getText() == mAnswer){
                     mScore = mScore + 1;
                     updateQuestion();
                 }
@@ -120,10 +121,11 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice3.setText(questionLibrary.getChoice3(mQuestionNumber));
 
         if(mQuestionNumber > 4) {
-            mAnswer = questionLibrary.getCorrectAnswer(mQuestionNumber - 5);
+           // mAnswer = questionLibrary.getCorrectAnswer(mQuestionNumber - 5);
         }
-        usedQuestions.add(mQuestionNumber);
-        questionLibrary.nQuestions.remove(mQuestionNumber);
+        usedQuestions.add(questionLibrary.nQuestions.get(mQuestionNumber));
+        System.out.println(usedQuestions);
+        //questionLibrary.nQuestions.remove(mQuestionNumber);
         //questionLibrary.nChoices.
         mQuestionNumber++;
 
