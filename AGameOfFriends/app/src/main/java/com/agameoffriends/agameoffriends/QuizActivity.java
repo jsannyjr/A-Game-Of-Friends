@@ -27,8 +27,10 @@ public class QuizActivity extends AppCompatActivity {
     private String mAnswer = "";
     private int mScore = 0;
     private int mQuestionNumber = 0;
+    private int mQuestionNumberNew = 0;
     private int questionLibrarySize = 10;
     private ArrayList<String> usedQuestions= new ArrayList<>();
+    private ArrayList<String> usedAnswer = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +49,18 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mQuestionNumber < 4){
+                if(mQuestionNumber < 5){
 
                     String newAnswer = nButtonChoice0.getText().toString();
                     System.out.println(newAnswer);
                     questionLibrary.nAnswers.add(newAnswer);
                     updateQuestion();
                 }
-                else if(mQuestionNumber >= 4 && nButtonChoice0.getText() == mAnswer){
+                else if(mQuestionNumber >= 5 && nButtonChoice0.getText() == mAnswer){
                     mScore = mScore + 1;
+                    updateQuestion();
+                }
+                else{
                     updateQuestion();
                 }
             }
@@ -75,6 +80,9 @@ public class QuizActivity extends AppCompatActivity {
                     mScore = mScore + 1;
                     updateQuestion();
                 }
+                else{
+                    updateQuestion();
+                }
             }
         });
 
@@ -90,6 +98,9 @@ public class QuizActivity extends AppCompatActivity {
                 }
                 else if(mQuestionNumber >= 5 && nButtonChoice2.getText() == mAnswer){
                     mScore = mScore + 1;
+                    updateQuestion();
+                }
+                else{
                     updateQuestion();
                 }
             }
@@ -109,21 +120,47 @@ public class QuizActivity extends AppCompatActivity {
                     mScore = mScore + 1;
                     updateQuestion();
                 }
+                else{
+                    updateQuestion();
+                }
             }
         });
     }
 
     public void updateQuestion() {
-        mQuestionView.setText(questionLibrary.getQuestion(mQuestionNumber));
-        nButtonChoice0.setText(questionLibrary.getChoice0(mQuestionNumber));
-        nButtonChoice1.setText(questionLibrary.getChoice1(mQuestionNumber));
-        nButtonChoice2.setText(questionLibrary.getChoice2(mQuestionNumber));
-        nButtonChoice3.setText(questionLibrary.getChoice3(mQuestionNumber));
+
+        if(mQuestionNumber < 4) {
+            mQuestionView.setText(questionLibrary.getQuestion(mQuestionNumber));
+            nButtonChoice0.setText(questionLibrary.getChoice0(mQuestionNumber));
+            nButtonChoice1.setText(questionLibrary.getChoice1(mQuestionNumber));
+            nButtonChoice2.setText(questionLibrary.getChoice2(mQuestionNumber));
+            nButtonChoice3.setText(questionLibrary.getChoice3(mQuestionNumber));
+            usedQuestions.add(questionLibrary.nQuestions.get(mQuestionNumber));
+            usedAnswer.add(questionLibrary.getChoice0(mQuestionNumber));
+            usedAnswer.add(questionLibrary.getChoice1(mQuestionNumber));
+            usedAnswer.add(questionLibrary.getChoice2(mQuestionNumber));
+            usedAnswer.add(questionLibrary.getChoice3(mQuestionNumber));
+
+        }
+
 
         if(mQuestionNumber > 4) {
-           // mAnswer = questionLibrary.getCorrectAnswer(mQuestionNumber - 5);
+            System.out.println("Second Session");
+            mQuestionView.setText(usedQuestions.get(mQuestionNumberNew));
+            nButtonChoice0.setText(usedAnswer.get(0 + 4 * mQuestionNumberNew));
+            nButtonChoice1.setText(usedAnswer.get(1 + 4 * mQuestionNumberNew));
+            nButtonChoice2.setText(usedAnswer.get(2 + 4 * mQuestionNumberNew));
+            nButtonChoice3.setText(usedAnswer.get(3 + 4 * mQuestionNumberNew));
+            mAnswer = questionLibrary.getCorrectAnswer(mQuestionNumberNew);
+            mQuestionNumberNew++;
         }
-        usedQuestions.add(questionLibrary.nQuestions.get(mQuestionNumber));
+        else if(mQuestionNumber > 10) {
+            mQuestionView.setText(mScore);
+            //System.out.println(mScore);
+        }
+        else{
+            //throw new Error("Help me");
+        }
         System.out.println(usedQuestions);
         //questionLibrary.nQuestions.remove(mQuestionNumber);
         //questionLibrary.nChoices.
