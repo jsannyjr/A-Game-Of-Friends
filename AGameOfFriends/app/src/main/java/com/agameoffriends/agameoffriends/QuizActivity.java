@@ -1,4 +1,5 @@
 package com.agameoffriends.agameoffriends;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -143,7 +144,10 @@ public class QuizActivity extends AppCompatActivity {
 
         }
 
-
+        if(mQuestionNumber == 4){
+            mQuestionNumber++;
+            startActivity(new Intent(QuizActivity.this, SubActivity.class));
+        }
         if(mQuestionNumber > 4) {
             System.out.println("Second Session");
             mQuestionView.setText(usedQuestions.get(mQuestionNumberNew));
