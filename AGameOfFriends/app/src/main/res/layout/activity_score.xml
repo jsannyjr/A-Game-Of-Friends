@@ -4,8 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="vertical" tools:context=".ScoreActivity"
-    android:weightSum="1">
+    android:orientation="vertical" tools:context=".ScoreActivity">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,24 +14,32 @@
         android:textColor="#fff"
         android:paddingLeft="120dp"
         android:paddingRight="120dp"
-        android:translationY="10000dp"
         android:textSize="20sp"
         android:fontFamily="casual"
         android:background="#4CAF50"
-        android:layout_marginBottom="123dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="81dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/Score"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/finishButton"
-        android:layout_alignEnd="@+id/finishButton"
-        android:layout_alignLeft="@+id/finishButton"
-        android:layout_alignStart="@+id/finishButton"
-        android:text="Score" />
+        android:text="Score"
+        android:id="@+id/score"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="And your score is..."
+        android:textSize="20dp"
+        android:padding="8dp"
+        android:id="@+id/question"
+        android:layout_above="@+id/score"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp" />
 
 </RelativeLayout>
