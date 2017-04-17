@@ -159,8 +159,9 @@ public class QuizActivity extends AppCompatActivity {
             mQuestionNumberNew++;
         }
         else if(mQuestionNumber > 10) {
-            mQuestionView.setText(mScore);
-            //System.out.println(mScore);
+            Intent scoring = new Intent(QuizActivity.this, ScoreActivity.class);
+            scoring.putExtra("Score Value", mScore);
+            startActivity(scoring);
         }
         else{
             //throw new Error("Help me");
