@@ -26,6 +26,11 @@
             android:label = "AGameOfFriends">
 
         </activity>
+        <activity
+            android:name=".ScoreActivity"
+            android:label = "AGameOfFriends">
+
+        </activity>
     </application>
 
 </manifest>
