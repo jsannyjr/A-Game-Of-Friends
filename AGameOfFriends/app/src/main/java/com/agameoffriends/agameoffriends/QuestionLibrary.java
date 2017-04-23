@@ -26,7 +26,8 @@ public class QuestionLibrary {
             {"My anaconda wants some of that.", "Have you ever seen the Eiffel Tower this close?", "Call me Big Daddy.", "You’re kidding right?"},
             {"Man of Steel", "Gone in Sixty Seconds", "Mission Impossible", "Home Alone"},
             {"Frodo", "Easter Bunny", "Jesus", "Buddha"},
-            {"Return of the Tentacle Monster Part 15", "Faster and more Furious", "Coming out of the Closet", "Charlie Sheen’s Birthday"}
+            {"Return of the Tentacle Monster Part 15", "Faster and more Furious", "Coming out of the Closet", "Charlie Sheen’s Birthday"},
+            {"Hello World", "Hello World", "Hello World", "Hello World"}
     };
 
     List<String> nAnswers = new ArrayList<>();

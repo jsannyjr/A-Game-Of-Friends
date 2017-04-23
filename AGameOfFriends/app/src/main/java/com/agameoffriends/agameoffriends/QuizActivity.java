@@ -129,8 +129,8 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void updateQuestion() {
-
-        if(mQuestionNumber < 4) {
+        System.out.println(mQuestionNumber);
+        if(mQuestionNumber < 5) {
             mQuestionView.setText(questionLibrary.getQuestion(mQuestionNumber));
             nButtonChoice0.setText(questionLibrary.getChoice0(mQuestionNumber));
             nButtonChoice1.setText(questionLibrary.getChoice1(mQuestionNumber));
@@ -141,15 +141,18 @@ public class QuizActivity extends AppCompatActivity {
             usedAnswer.add(questionLibrary.getChoice1(mQuestionNumber));
             usedAnswer.add(questionLibrary.getChoice2(mQuestionNumber));
             usedAnswer.add(questionLibrary.getChoice3(mQuestionNumber));
+            System.out.println("First Session");
 
         }
 
-        if(mQuestionNumber == 4){
+        else if(mQuestionNumber == 5){
+            System.out.println("Mid Session");
             mQuestionNumber++;
             startActivity(new Intent(QuizActivity.this, SubActivity.class));
+            updateQuestion();
         }
-        if(mQuestionNumber > 4) {
-            System.out.println("Second Session");
+        else if(mQuestionNumber > 5 && mQuestionNumber < 13) {
+            System.out.println("Second Session " + mQuestionNumber);
             mQuestionView.setText(usedQuestions.get(mQuestionNumberNew));
             nButtonChoice0.setText(usedAnswer.get(0 + 4 * mQuestionNumberNew));
             nButtonChoice1.setText(usedAnswer.get(1 + 4 * mQuestionNumberNew));
@@ -158,18 +161,19 @@ public class QuizActivity extends AppCompatActivity {
             mAnswer = questionLibrary.getCorrectAnswer(mQuestionNumberNew);
             mQuestionNumberNew++;
         }
-        else if(mQuestionNumber > 10) {
+        else if(mQuestionNumber > 13) {
             Intent scoring = new Intent(QuizActivity.this, ScoreActivity.class);
             scoring.putExtra("Score Value", mScore);
             startActivity(scoring);
         }
         else{
-            //throw new Error("Help me");
+            System.out.println("Bug");
         }
         System.out.println(usedQuestions);
         //questionLibrary.nQuestions.remove(mQuestionNumber);
         //questionLibrary.nChoices.
         mQuestionNumber++;
+        System.out.println(mQuestionNumber);
 
 
 

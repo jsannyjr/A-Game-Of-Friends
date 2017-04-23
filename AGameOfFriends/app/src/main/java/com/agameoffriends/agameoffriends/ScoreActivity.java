@@ -28,7 +28,7 @@ public class ScoreActivity extends AppCompatActivity{
         mFinishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                //finish();
                 startActivity(new Intent(ScoreActivity.this, MainActivity.class));
             }
         });
