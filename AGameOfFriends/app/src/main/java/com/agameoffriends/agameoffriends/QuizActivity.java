@@ -50,14 +50,14 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mQuestionNumber < 5){
+                if(mQuestionNumber < 6){
 
                     String newAnswer = nButtonChoice0.getText().toString();
                     System.out.println(newAnswer);
                     questionLibrary.nAnswers.add(newAnswer);
                     updateQuestion();
                 }
-                else if(mQuestionNumber >= 5 && nButtonChoice0.getText() == mAnswer){
+                else if(mQuestionNumber >= 6 && nButtonChoice0.getText() == mAnswer){
                     mScore = mScore + 1;
                     updateQuestion();
                 }
@@ -70,14 +70,14 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mQuestionNumber < 5){
+                if(mQuestionNumber < 6){
 
                     String newAnswer = nButtonChoice1.getText().toString();
                     System.out.println(newAnswer);
                     questionLibrary.nAnswers.add(newAnswer);
                     updateQuestion();
                 }
-                else if(mQuestionNumber >= 5 && nButtonChoice1.getText() == mAnswer){
+                else if(mQuestionNumber >= 6 && nButtonChoice1.getText() == mAnswer){
                     mScore = mScore + 1;
                     updateQuestion();
                 }
@@ -90,14 +90,14 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mQuestionNumber < 5){
+                if(mQuestionNumber < 6){
 
                     String newAnswer = nButtonChoice2.getText().toString();
                     System.out.println(newAnswer);
                     questionLibrary.nAnswers.add(newAnswer);
                     updateQuestion();
                 }
-                else if(mQuestionNumber >= 5 && nButtonChoice2.getText() == mAnswer){
+                else if(mQuestionNumber >= 6 && nButtonChoice2.getText() == mAnswer){
                     mScore = mScore + 1;
                     updateQuestion();
                 }
@@ -110,14 +110,14 @@ public class QuizActivity extends AppCompatActivity {
         nButtonChoice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mQuestionNumber < 5){
+                if(mQuestionNumber < 6){
 
                     String newAnswer = nButtonChoice3.getText().toString();
                     System.out.println(newAnswer);
                     questionLibrary.nAnswers.add(newAnswer);
                     updateQuestion();
                 }
-                else if(mQuestionNumber >= 5 && nButtonChoice3.getText() == mAnswer){
+                else if(mQuestionNumber >= 6 && nButtonChoice3.getText() == mAnswer){
                     mScore = mScore + 1;
                     updateQuestion();
                 }
@@ -151,7 +151,7 @@ public class QuizActivity extends AppCompatActivity {
             startActivity(new Intent(QuizActivity.this, SubActivity.class));
             updateQuestion();
         }
-        else if(mQuestionNumber > 5 && mQuestionNumber < 13) {
+        else if(mQuestionNumber > 5 && mQuestionNumberNew < 5) {
             System.out.println("Second Session " + mQuestionNumber);
             mQuestionView.setText(usedQuestions.get(mQuestionNumberNew));
             nButtonChoice0.setText(usedAnswer.get(0 + 4 * mQuestionNumberNew));
@@ -159,6 +159,11 @@ public class QuizActivity extends AppCompatActivity {
             nButtonChoice2.setText(usedAnswer.get(2 + 4 * mQuestionNumberNew));
             nButtonChoice3.setText(usedAnswer.get(3 + 4 * mQuestionNumberNew));
             mAnswer = questionLibrary.getCorrectAnswer(mQuestionNumberNew);
+            System.out.println(mAnswer);
+            System.out.println(mQuestionNumberNew + " Answers Number");
+            System.out.println(usedAnswer);
+            System.out.println(questionLibrary.nAnswers);
+            //System.out.println()
             mQuestionNumberNew++;
         }
         else if(mQuestionNumber > 13) {
@@ -169,11 +174,11 @@ public class QuizActivity extends AppCompatActivity {
         else{
             System.out.println("Bug");
         }
-        System.out.println(usedQuestions);
+        //System.out.println(usedQuestions);
         //questionLibrary.nQuestions.remove(mQuestionNumber);
         //questionLibrary.nChoices.
         mQuestionNumber++;
-        System.out.println(mQuestionNumber);
+        //System.out.println(mQuestionNumber);
 
 
 
