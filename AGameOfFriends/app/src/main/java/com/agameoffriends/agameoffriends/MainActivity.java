@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
+                //startActivity(new Intent(MainActivity.this, ScoreActivity.class));
                 startActivity(new Intent(MainActivity.this, QuizActivity.class));
             }
         });

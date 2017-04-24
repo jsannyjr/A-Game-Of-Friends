@@ -12,17 +12,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ScoreActivity extends AppCompatActivity{
-    Button mFinishButton;
-    TextView scoreView;
-
+    private Button mFinishButton;
+    private TextView scoreView;
+    private int scoreValue;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub);
-
-        int scoreValue = getIntent().getIntExtra("Score Value", 0);
+        setContentView(R.layout.activity_score);
+        scoreValue = getIntent().getIntExtra("Score Value", 0);
         scoreView =(TextView)findViewById(R.id.score);
-        scoreView.setText(scoreValue);
+
+        scoreView.setText("5");
 
         mFinishButton = (Button)findViewById(R.id.finishButton);
         mFinishButton.setOnClickListener(new View.OnClickListener() {

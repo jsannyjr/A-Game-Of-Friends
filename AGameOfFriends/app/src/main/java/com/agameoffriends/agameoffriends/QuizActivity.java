@@ -33,6 +33,8 @@ public class QuizActivity extends AppCompatActivity {
     private ArrayList<String> usedQuestions= new ArrayList<>();
     private ArrayList<String> usedAnswer = new ArrayList<>();
 
+    private Intent scoring;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -166,8 +168,9 @@ public class QuizActivity extends AppCompatActivity {
             //System.out.println()
             mQuestionNumberNew++;
         }
-        else if(mQuestionNumber > 13) {
-            Intent scoring = new Intent(QuizActivity.this, ScoreActivity.class);
+        else if(mQuestionNumber > 11) {
+            System.out.println("Scoring");
+            scoring = new Intent(QuizActivity.this, ScoreActivity.class);
             scoring.putExtra("Score Value", mScore);
             startActivity(scoring);
         }
