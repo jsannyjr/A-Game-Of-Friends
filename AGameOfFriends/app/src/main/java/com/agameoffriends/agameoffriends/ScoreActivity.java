@@ -15,15 +15,18 @@ public class ScoreActivity extends AppCompatActivity{
     private Button mFinishButton;
     private TextView scoreView;
     private int scoreValue;
+    private Bundle bundle;
+    private String temp;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
-        scoreValue = getIntent().getIntExtra("Score Value", 0);
+        bundle = getIntent().getExtras();
+        scoreValue = bundle.getInt("Score Value");
         scoreView =(TextView)findViewById(R.id.score);
-
-        scoreView.setText(scoreValue);
+        System.out.println("Check score " + scoreValue);
+        scoreView.setText(String.valueOf(scoreValue));
 
         mFinishButton = (Button)findViewById(R.id.finishButton);
         mFinishButton.setOnClickListener(new View.OnClickListener() {

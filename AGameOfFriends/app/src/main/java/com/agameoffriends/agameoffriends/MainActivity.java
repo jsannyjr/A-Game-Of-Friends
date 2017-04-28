@@ -17,6 +17,7 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
     Button mStartButton;
+    Button mFinishButon;
     Button mute;
     Button restart;
     MediaPlayer openingMusic;
@@ -28,11 +29,20 @@ public class MainActivity extends AppCompatActivity {
         openingMusic.setAudioStreamType(AudioManager.STREAM_MUSIC);
         openingMusic.start();
         mStartButton = (Button)findViewById(R.id.startButton);
+        mFinishButon = (Button)findViewById(R.id.ExitButton);
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
+                openingMusic.stop();
                 //startActivity(new Intent(MainActivity.this, ScoreActivity.class));
                 startActivity(new Intent(MainActivity.this, QuizActivity.class));
+            }
+        });
+        mFinishButon.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                openingMusic.stop();
+                finish();
             }
         });
     }

@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.media.MediaPlayer;
 
 import org.w3c.dom.Text;
 
@@ -35,8 +36,15 @@ public class QuizActivity extends AppCompatActivity {
 
     private Intent scoring;
 
+    private MediaPlayer music;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        music = MediaPlayer.create(QuizActivity.this, R.raw.quizactivity);
+        music.start();
+        music.setLooping(true); //loop music
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
@@ -172,6 +180,8 @@ public class QuizActivity extends AppCompatActivity {
             System.out.println("Scoring");
             scoring = new Intent(QuizActivity.this, ScoreActivity.class);
             scoring.putExtra("Score Value", mScore);
+            music.setLooping(false);
+            music.stop();
             startActivity(scoring);
         }
         else{
