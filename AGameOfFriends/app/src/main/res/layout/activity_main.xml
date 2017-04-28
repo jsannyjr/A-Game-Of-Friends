@@ -22,9 +22,12 @@
         android:textSize="20sp"
         android:fontFamily="casual"
         android:background="#4CAF50"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="119dp" />
+        android:layout_marginBottom="33dp"
+        android:layout_above="@+id/ExitButton"
+        android:layout_alignRight="@+id/question"
+        android:layout_alignEnd="@+id/question"
+        android:layout_alignLeft="@+id/ExitButton"
+        android:layout_alignStart="@+id/ExitButton" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,10 +40,10 @@
         android:textSize="20sp"
         android:fontFamily="casual"
         android:background="#4CAF50"
+        android:layout_marginBottom="69dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        android:layout_alignRight="@+id/startButton"
-        android:layout_alignEnd="@+id/startButton" />
+        android:layout_alignRight="@+id/question"
+        android:layout_alignEnd="@+id/question" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,10 +54,7 @@
         android:background="#4CAF50"
         android:padding="8dp"
         android:id="@+id/question"
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="40dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/ExitButton"
-        android:layout_alignStart="@+id/ExitButton"
-        android:layout_alignRight="@+id/ExitButton"
-        android:layout_alignEnd="@+id/ExitButton" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

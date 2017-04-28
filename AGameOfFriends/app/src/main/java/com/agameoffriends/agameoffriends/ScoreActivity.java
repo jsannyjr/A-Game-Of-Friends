@@ -23,7 +23,7 @@ public class ScoreActivity extends AppCompatActivity{
         scoreValue = getIntent().getIntExtra("Score Value", 0);
         scoreView =(TextView)findViewById(R.id.score);
 
-        scoreView.setText("5");
+        scoreView.setText(scoreValue);
 
         mFinishButton = (Button)findViewById(R.id.finishButton);
         mFinishButton.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,8 @@
 package com.agameoffriends.agameoffriends;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,11 +17,16 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
     Button mStartButton;
+    Button mute;
+    Button restart;
+    MediaPlayer openingMusic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        openingMusic = MediaPlayer.create(MainActivity.this, R.raw.opening2);
+        openingMusic.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        openingMusic.start();
         mStartButton = (Button)findViewById(R.id.startButton);
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
