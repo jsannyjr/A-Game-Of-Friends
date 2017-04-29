@@ -177,12 +177,13 @@ public class QuizActivity extends AppCompatActivity {
             mQuestionNumberNew++;
         }
         else if(mQuestionNumber > 11) {
-            System.out.println("Scoring");
+
             scoring = new Intent(QuizActivity.this, ScoreActivity.class);
             scoring.putExtra("Score Value", mScore);
             music.setLooping(false);
             music.stop();
             startActivity(scoring);
+            finish();
         }
         else{
             System.out.println("Bug");
