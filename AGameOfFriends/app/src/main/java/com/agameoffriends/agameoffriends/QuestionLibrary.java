@@ -13,9 +13,13 @@ public class QuestionLibrary {
                 "What movie best describes Player 1’s bed skills?",
                 "If Player 1 had to fight anyone, who would kick their a** the best?",
                 "What would Player 1’s porn movie most likely be called?",
-                "Hello World"
+                "If Player 1 was a toy, how would he or she be turned on?",
+                "When Player 1 was born, what was their first words?",
+                "What song would describe Player 1’s dating skills? ",
+                "Which of the following candies best describes Player 1's irst kiss",
+                "What would Player's 1 ideal date would be?"
 
-    ));
+            ));
 
     public ArrayList<ArrayList<String>> mChoice = new ArrayList<ArrayList<String>>(); //finish this for choices to optimize code later;
     public ArrayList<String> singleList = new ArrayList<String>(Arrays.asList("Their phone", "The lights", "The newspaper", "Themselves??"));
@@ -27,7 +31,11 @@ public class QuestionLibrary {
             {"Man of Steel", "Gone in Sixty Seconds", "Mission Impossible", "Home Alone"},
             {"Frodo", "Easter Bunny", "Jesus", "Buddha"},
             {"Return of the Tentacle Monster Part 15", "Faster and more Furious", "Coming out of the Closet", "Charlie Sheen’s Birthday"},
-            {"Hello World", "Hello World", "Hello World", "Hello World"}
+            {"Ride like the wind Bullseye!", "I'm always on", "Everything is awesome!!!", "Don't worry, I'm all plastic."},
+            {"System.out.println('Hello World')", "10 more minutes, mom.", "Show me dem boobs", "I want my money back."},
+            {"Beat It", "All By Myself","Superfreak", "Santa Claus is Coming to Town"},
+            {"Starburst", "Hot Tamales", "Milk Duds", "Zero"},
+            {"Netflix and Chill", "Hulu and Woohoo", "IMAX and Climax", "Buzzfeed and Bukkake"}
     };
 
     List<String> nAnswers = new ArrayList<>();

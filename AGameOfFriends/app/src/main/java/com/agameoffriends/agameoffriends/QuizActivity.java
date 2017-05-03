@@ -27,6 +27,8 @@ public class QuizActivity extends AppCompatActivity {
     private Button nButtonChoice3;
 
     private String mAnswer = "";
+    private int setNumber = 0;
+    private double test = 0;
     private int mScore = 0;
     private int mQuestionNumber = 0;
     private int mQuestionNumberNew = 0;
@@ -41,6 +43,10 @@ public class QuizActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setNumber = (int)Math.floor(Math.random() * 2.0);
+        test = (Math.random() * 2.0);
+        System.out.println(test);
+        System.out.println(setNumber);
         music = MediaPlayer.create(QuizActivity.this, R.raw.quizactivity);
         music.start();
         music.setLooping(true); //loop music
@@ -141,16 +147,16 @@ public class QuizActivity extends AppCompatActivity {
     public void updateQuestion() {
         System.out.println(mQuestionNumber);
         if(mQuestionNumber < 5) {
-            mQuestionView.setText(questionLibrary.getQuestion(mQuestionNumber));
-            nButtonChoice0.setText(questionLibrary.getChoice0(mQuestionNumber));
-            nButtonChoice1.setText(questionLibrary.getChoice1(mQuestionNumber));
-            nButtonChoice2.setText(questionLibrary.getChoice2(mQuestionNumber));
-            nButtonChoice3.setText(questionLibrary.getChoice3(mQuestionNumber));
-            usedQuestions.add(questionLibrary.nQuestions.get(mQuestionNumber));
-            usedAnswer.add(questionLibrary.getChoice0(mQuestionNumber));
-            usedAnswer.add(questionLibrary.getChoice1(mQuestionNumber));
-            usedAnswer.add(questionLibrary.getChoice2(mQuestionNumber));
-            usedAnswer.add(questionLibrary.getChoice3(mQuestionNumber));
+            mQuestionView.setText(questionLibrary.getQuestion(mQuestionNumber + (setNumber * 5)));
+            nButtonChoice0.setText(questionLibrary.getChoice0(mQuestionNumber + (setNumber * 5)));
+            nButtonChoice1.setText(questionLibrary.getChoice1(mQuestionNumber + (setNumber * 5)));
+            nButtonChoice2.setText(questionLibrary.getChoice2(mQuestionNumber + (setNumber * 5)));
+            nButtonChoice3.setText(questionLibrary.getChoice3(mQuestionNumber + (setNumber * 5)));
+            usedQuestions.add(questionLibrary.nQuestions.get(mQuestionNumber + (setNumber * 5)));
+            usedAnswer.add(questionLibrary.getChoice0(mQuestionNumber + (setNumber * 5)));
+            usedAnswer.add(questionLibrary.getChoice1(mQuestionNumber + (setNumber * 5)));
+            usedAnswer.add(questionLibrary.getChoice2(mQuestionNumber + (setNumber * 5)));
+            usedAnswer.add(questionLibrary.getChoice3(mQuestionNumber + (setNumber * 5)));
             System.out.println("First Session");
 
         }
