@@ -4,12 +4,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="vertical" tools:context=".ScoreActivity">
+    android:orientation="vertical" tools:context=".TutorialActivity">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quit"
-        android:id="@+id/finishButton"
+        android:text="Start"
+        android:id="@+id/startButton"
         android:textStyle="bold"
         android:textColor="#fff"
         android:paddingLeft="120dp"
@@ -21,25 +21,30 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="81dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Score"
-        android:id="@+id/score"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="And your score is..."
-        android:textSize="20dp"
+        android:text="Tutorial"
+        android:textSize="40dp"
         android:padding="8dp"
         android:id="@+id/question"
         android:layout_above="@+id/score"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="43dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize = "25dp"
+        android:text="How to Play: Player 1 answers the series of questions about the Player 2. Then Player 2 would try to guess what Player 1 answered about them."
+        android:id="@+id/textView"
+        android:layout_below="@+id/question"
+        android:layout_alignLeft="@+id/question"
+        android:layout_alignStart="@+id/question"
+        android:layout_alignRight="@+id/finishButton"
+        android:layout_alignEnd="@+id/finishButton" />
 
 </RelativeLayout>

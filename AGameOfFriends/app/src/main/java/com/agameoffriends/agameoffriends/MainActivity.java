@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 openingMusic.stop();
                 //startActivity(new Intent(MainActivity.this, ScoreActivity.class));
-                startActivity(new Intent(MainActivity.this, QuizActivity.class));
+                startActivity(new Intent(MainActivity.this, TutorialActivity.class));
             }
         });
         mFinishButon.setOnClickListener(new View.OnClickListener(){

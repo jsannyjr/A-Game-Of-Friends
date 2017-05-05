@@ -5,19 +5,28 @@ import java.util.Arrays;
 import java.util.List;
 
 public class QuestionLibrary {
-    //List<String> nQuestions = new ArrayList<String>();
 
     List<String> nQuestions = new ArrayList<String>(Arrays.asList(
-                "What is the first thing Player 1 touches in the morning?",
-                "What does Player 1 say to get ready for whoopee?",
-                "What movie best describes Player 1’s bed skills?",
-                "If Player 1 had to fight anyone, who would kick their a** the best?",
-                "What would Player 1’s porn movie most likely be called?",
-                "If Player 1 was a toy, how would he or she be turned on?",
-                "When Player 1 was born, what was their first words?",
-                "What song would describe Player 1’s dating skills? ",
-                "Which of the following candies best describes Player 1's irst kiss",
-                "What would Player's 1 ideal date would be?"
+                "What is the first thing Player 2 touches in the morning?",
+                "What does Player 2 say to get ready for whoopee?",
+                "What movie best describes Player 2’s bed skills?",
+                "If Player 2 had to fight anyone, who would kick their a** the best?",
+                "What would Player 2’s porn movie most likely be called?",
+                "If Player 2 was a toy, how would he or she be turned on?",
+                "When Player 2 was born, what was their first words?",
+                "What song would describe Player 2’s 'woohoo' skills? ",
+                "Which of the following candies best describes Player 2's first kiss",
+                "What would Player's 2 ideal date would be?",
+                "If Player 2 was a car, what sound would they make to to start up?",
+                "Complete this sentence: 'Santa Claus is _______ ",
+                "If Player 2 was an element from Avatar, which one would they be?",
+                "What type of candy would Player 2 be?",
+                "What stripper name would Player 2 most likely have?",
+                "What would Player 2 most likely suck at?",
+                "Describe Player 2's college experience as an art piece.",
+                "What Harry Potter House of Wizardry would Player 2 be in?",
+                "How would you describe Player 2 as a lover?",
+                "What type of sex toy would Player 2 be?"
 
             ));
 
@@ -35,7 +44,18 @@ public class QuestionLibrary {
             {"System.out.println('Hello World')", "10 more minutes, mom.", "Show me dem boobs", "I want my money back."},
             {"Beat It", "All By Myself","Superfreak", "Santa Claus is Coming to Town"},
             {"Starburst", "Hot Tamales", "Milk Duds", "Zero"},
-            {"Netflix and Chill", "Hulu and Woohoo", "IMAX and Climax", "Buzzfeed and Bukkake"}
+            {"Netflix and Chill", "Hulu and Woohoo", "IMAX and Climax", "Buzzfeed and Bukkake"},
+            {"Vroom, Vroom, B*tch", "Ka-Chow", "And...no", "Drift, drift, drift"},
+            {"real", "is my Daddy", "came down my chimney", "is a lie"},
+            {"Air", "Earth", "Water", "Fire"},
+            {"Airhead", "Jawbreaker", "Dum-dum", "Whoppers"},
+            {"J.B Morris", "Red Rossy", "Leggy Laura", "Busty Beatrice"},
+            {"Video games", "School", "Deeznutz", "Player 2"},
+            {"The Scream", "The Kiss", "The School of Athens", "The Gates of Hell"},
+            {"Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"},
+            {"The one that got away", "The crazy one", "Never again", "The one"},
+            {"Fuzzy handcuffs", "A vibrator", "A ball gag", "A fleshlight"}
+
     };
 
     List<String> nAnswers = new ArrayList<>();
@@ -48,7 +68,6 @@ public class QuestionLibrary {
         //nChoices
     }
     public String getQuestion (int a){
-        //System.out.println(nQuestions.size());
         String question = nQuestions.get(a);
         return question;
     }

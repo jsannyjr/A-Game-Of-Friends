@@ -43,7 +43,7 @@ public class QuizActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setNumber = (int)Math.floor(Math.random() * 2.0);
+        setNumber = (int)Math.floor(Math.random() * 4.0);
         test = (Math.random() * 2.0);
         System.out.println(test);
         System.out.println(setNumber);
